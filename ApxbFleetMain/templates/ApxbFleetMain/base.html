@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% load static %}
+
+    <link
+      rel="stylesheet"
+      href="{% static 'bootstrap/css/bootstrap.min.css' %}"
+    />
+    <link rel="stylesheet" href="{% static 'css/Cabin.css'%}" />
+    <link rel="stylesheet" href="{% static 'css/Laura.css'%}" />
+    <link rel="stylesheet" href="{% static 'css/Navbar-Right-Links-Dark-icons.css' %}" />
+
+    <link rel="stylesheet" href="{% static 'css/Source%20Sans%20Pro.css' %}" />
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+  />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/Navbar-Centered-Links-icons.css' %}" />
+    <title>{% block title %} My Website {% endblock %}</title>
+  </head>
+  <body  id="page-top" data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="77">
+    <nav class="navbar navbar-light navbar-expand-md fixed-top" id="mainNav">
+      <div class="container"><a class="navbar-brand" href="#">APXb Fleet</a><button data-bs-toggle="collapse" class="navbar-toggler navbar-toggler-right" data-bs-target="#navbarResponsive" type="button" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" value="Menu"><i class="fa fa-bars"></i></button>
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+              <ul class="navbar-nav ms-auto">
+                  <li class="nav-item nav-link"><a class="nav-link active" href="#about">About</a></li>
+                  <li class="nav-item nav-link"><a class="nav-link" href="#download">Login</a></li>
+                  <li class="nav-item nav-link"></li>
+              </ul>
+          </div>
+      </div>
+  </nav>
+
+
+    {% block content %} {% endblock %}
+    <footer>
+      <div class="container text-center">
+          <p>Apxb08© 2023</p>
+      </div>
+  </footer>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/greyscale.js' %}"></script>
+    {% block script %}
+    
+    {% endblock %}
+  </body>
+  
+  </html>

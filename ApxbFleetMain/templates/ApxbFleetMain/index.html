@@ -1,0 +1,17 @@
+{% extends 'ApxbFleetMain/base.html' %}
+{% load static %}
+{% block content %}
+<header class="masthead" style="background-image: url('{% static 'img/intro-bg.png' %}' );">
+  <div class="intro-body">
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-8 mx-auto">
+                  <h6 class="brand-heading">non-intrusive</h6>
+                  <p class="intro-text">Improve Road Safety and Prevent Accidents with Advanced Driver Monitoring Technology&nbsp;</p><a class="btn btn-link btn-circle" role="button" href="#about"><i class="fa fa-angle-double-down animated"></i></a>
+              </div>
+          </div>
+      </div>
+  </div>
+</header><!-- Start: Map Clean -->
+<div class="map-clean"><iframe allowfullscreen="" frameborder="0" src="https://cdn.bootstrapstudio.io/placeholders/map.html" width="100%" height="450"></iframe></div><!-- End: Map Clean -->
+{% endblock %}
