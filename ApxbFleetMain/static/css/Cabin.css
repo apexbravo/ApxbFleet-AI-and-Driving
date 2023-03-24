@@ -1,6 +1,6 @@
 @font-face {
 	font-family: 'Cabin';
-	src: url(../../assets/fonts/u-4X0qWljRw-PfU81xCKCpdpbgZJl6XFpfEd7eA9BIxxkbqDH7mlx17r.woff2) format('woff2');
+	src: url(../fonts/u-4X0qWljRw-PfU81xCKCpdpbgZJl6XFpfEd7eA9BIxxkbqDH7mlx17r.woff2) format('woff2');
 	font-weight: 700;
 	font-style: normal;
 	font-display: swap;
@@ -9,7 +9,7 @@
 
 @font-face {
 	font-family: 'Cabin';
-	src: url(../../assets/fonts/u-4X0qWljRw-PfU81xCKCpdpbgZJl6XFpfEd7eA9BIxxkbqDH7ilx17r.woff2) format('woff2');
+	src: url(../fonts/u-4X0qWljRw-PfU81xCKCpdpbgZJl6XFpfEd7eA9BIxxkbqDH7ilx17r.woff2) format('woff2');
 	font-weight: 700;
 	font-style: normal;
 	font-display: swap;
@@ -18,7 +18,7 @@
 
 @font-face {
 	font-family: 'Cabin';
-	src: url(../../assets/fonts/u-4X0qWljRw-PfU81xCKCpdpbgZJl6XFpfEd7eA9BIxxkbqDH7alxw.woff2) format('woff2');
+	src: url(../fonts/u-4X0qWljRw-PfU81xCKCpdpbgZJl6XFpfEd7eA9BIxxkbqDH7alxw.woff2) format('woff2');
 	font-weight: 700;
 	font-style: normal;
 	font-display: swap;
