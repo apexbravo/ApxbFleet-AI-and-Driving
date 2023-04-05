@@ -1,4 +1,41 @@
 {% extends 'ApxbFleetMain/blankLayout.html' %}
 {% load static %}
 {% block content %}
+
+
+<div class="container">
+
+  <div class="btn-toolbar float-end d-inline pb-3">
+    <a class="btn btn-sm btn-outline-secondary " href="{% url 'ApxbFleetMain:create_driver' %}" ><i class="fas fa-plus"></i> Add new Driver</a>
+</div>
+  <h1>Driver List</h1>
+  <table class="table table-hover">
+      <thead>
+          <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Phone Number</th>
+              <th>Car Make</th>
+              <th>Car Model</th>
+              <th>License Plate</th>
+          </tr>
+      </thead>
+      <tbody>
+          {% for driver in drivers %}
+              <tr>
+                  <td>{{ driver.id }}</td>
+                  <td>{{ driver.name }}</td>
+                  <td>{{ driver.phone_number }}</td>
+                  <td>{{ driver.car_make }}</td>
+                  <td>{{ driver.car_model }}</td>
+                  <td>{{ driver.license_plate }}</td>
+              </tr>
+          {% empty %}
+              <tr>
+                  <td colspan="6">No drivers found.</td>
+              </tr>
+          {% endfor %}
+      </tbody>
+  </table>
+</div>
 {% endblock %}

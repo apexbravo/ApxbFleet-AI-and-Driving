@@ -1,4 +1,24 @@
 {% extends 'ApxbFleetMain/blankLayout.html' %}
 {% load static %}
 {% block content %}
+
+<div class="container">
+<h3>Create New Driver</h3>
+<div class="col-9">
+<div class="card">
+  
+<form method="POST" class="form">
+  <div class="card-body bg-dark">
+  {% csrf_token %}
+  {{ form.as_p }}
+  
+  </div>
+  <div class="card-footer">
+  <button type="submit" class="btn btn-primary">Save</button>
+  <a href="{% url 'ApxbFleetMain:drivers_list' %}" class="btn btn-secondary">Cancel</a>
+  </div>
+</form>
+</div>
+</div>
+</div>
 {% endblock %}

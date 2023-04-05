@@ -28,7 +28,7 @@
                   </svg></span><span>Brand</span></a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-5"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
           <div class="collapse navbar-collapse" id="navcol-5">
               <ul class="navbar-nav ms-auto">
-                  <li class="nav-item"><a class="nav-link active" href="#">Drivers</a></li>
+                  <li class="nav-item"><a class="nav-link active" href="{% url 'ApxbFleetMain:drivers_list' %}">Drivers</a></li>
                   <li class="nav-item"><a class="nav-link" href="#"></a></li>
                   <li class="nav-item"><a class="nav-link" href="#"></a></li>
               </ul><a class="btn btn-primary ms-md-2" role="button" href="#">Log out</a>
@@ -36,8 +36,9 @@
       </div>
   </nav>
 
-
+    <div class="mb-5">
     {% block content %} {% endblock %}
+    </div>
     <footer>
       <div class="container text-center">
           <p>Apxb08© 2023</p>
