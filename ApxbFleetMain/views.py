@@ -26,13 +26,13 @@ def driver_detail(request, pk):
 
 def create_driver(request):
     if request.method == 'POST':
-        form = DriverForm(request.POST)
+        form = DriverForm(request.POST, request.FILES)
         if form.is_valid():
-            form.save()
+            driver = form.save(commit=False)
+            driver.save()
             return redirect('ApxbFleetMain/pages/drivers/index.html')
     else:
         form = DriverForm()
-
     return render(request, 'ApxbFleetMain/pages/drivers/add.html', {'form': form})
 
 

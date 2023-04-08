@@ -55,7 +55,7 @@
   border-radius: 50%;
 }
 
-.table {
+/* .table {
   --bs-table-color: var(--bs-table-border-color);
   --bs-table-bg: transparent;
   --bs-table-border-color: var(--bs-border-color);
@@ -71,7 +71,7 @@
   color: var(--bs-table-color);
   vertical-align: top;
   border-color: var(--bs-table-border-color);
-}
+} */
 
 body {
   font-family: "Cabin","Helvetica Neue",Helvetica,Arial,sans-serif;

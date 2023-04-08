@@ -7,7 +7,7 @@
 <div class="col-9">
 <div class="card">
   
-<form method="POST" class="form">
+<form method="POST" class="form" enctype="multipart/form-data">
   <div class="card-body bg-dark">
   {% csrf_token %}
   {{ form.as_p }}

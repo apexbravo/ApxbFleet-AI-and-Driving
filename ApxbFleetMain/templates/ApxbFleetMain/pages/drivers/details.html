@@ -1,4 +1,76 @@
 {% extends 'ApxbFleetMain/blankLayout.html' %}
 {% load static %}
 {% block content %}
+
+<div class="container mt-3">
+  <div class="row">
+    <div class="col-md-4">
+      <!-- Driver profile picture -->
+      {% if driver.picture %}
+      <img src="{{ driver.picture.url }}" alt="{{ driver.first_name }}'s Picture" class="img-fluid rounded-circle mb-3 bg-image" style="height: 150px; width: 150px; object-fit: cover;">
+    {% else %}
+      <img src="https://via.placeholder.com/150" alt="Driver Profile Picture" class="img-fluid rounded-circle mb-3 bg-image" style="height: 150px; width: 100px; object-fit: cover;">
+    {% endif %}
+      <h3 class="mb-3">{{ driver.first_name }} {{ driver.last_name }}</h3>
+      <!-- Driver essential information -->
+      <ul class="list-unstyled">
+        <li><strong>Driver ID:</strong> 12345</li>
+        <li><strong>License Number:</strong> {{ driver.license_plate }}</li>
+        <li><strong>Phone Number:</strong> {{ driver.phone_number }}</li>
+        <li><strong>Email:</strong> {{ driver.email }}</li>
+        <li><strong>Address:</strong> 123 Main St, Anytown, USA</li>
+      </ul>
+    </div>
+    <div class="col-md-8">
+      <!-- Driver additional information -->
+      <h4 class="mb-3">Additional Information</h4>
+      <ul class="list-group mb-3">
+        <li class="list-group-item">Years of Experience: 10</li>
+        <li class="list-group-item">Driving Record: Clean</li>
+        <li class="list-group-item">Training Courses Completed: Defensive Driving, Safety Training</li>
+        <li class="list-group-item">Languages Spoken: English, Spanish</li>
+      </ul>
+      <!-- Driver location information -->
+      <h4 class="mb-3">Location Information</h4>
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Current Location</h5>
+          <p class="card-text">123 Main St, Anytown, USA</p>
+          <a href="#" class="btn btn-primary">Get Directions</a>
+          <div id="map"></div>
+        </div>
+      </div>
+    </div>
+</div>
+{% endblock %}
+{% block script %}
+<script>
+  function initMap() {
+      // Initialize a new Google Map
+      var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 16
+      });
+
+      // Try to get the user's current location
+      if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(function (position) {
+              var pos = {
+                  lat: {{driver.location_lat}},
+                  lng: {{driver.location_long}}
+              };
+
+              // Center the map on the user's location
+              map.setCenter(pos);
+
+              // Add a marker to the user's location
+              var marker = new google.maps.Marker({
+                  position: pos,
+                  map: map,
+                  title: '{{ driver.first_name}} {{driver.last_name}}'
+              });
+          });
+      }
+  }
+</script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDGpHozG4LVQn1pzqAbp3d8CtLPv0kqbas&callback=initMap"></script>
 {% endblock %}

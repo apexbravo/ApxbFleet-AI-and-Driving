@@ -14,3 +14,5 @@ class Driver(models.Model):
         max_digits=9, decimal_places=6, default=0)
     location_long = models.DecimalField(
         max_digits=9, decimal_places=6, default=0)
+    picture = models.ImageField(
+        upload_to='driver_pictures/', blank=True, null=True)
