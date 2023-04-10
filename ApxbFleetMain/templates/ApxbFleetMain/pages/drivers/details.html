@@ -2,14 +2,18 @@
 {% load static %}
 {% block content %}
 
-<div class="container mt-3">
+
+<div class="container mt-4">
+  <div class="btn-toolbar float-end d-inline pb-3">
+    <a class="btn btn-sm btn-outline-secondary " href="{% url 'ApxbFleetMain:driver_edit' driver.id %}" ><i class="fa fa-penci"></i> Edit Driver</a>
+</div>
   <div class="row">
     <div class="col-md-4">
       <!-- Driver profile picture -->
       {% if driver.picture %}
       <img src="{{ driver.picture.url }}" alt="{{ driver.first_name }}'s Picture" class="img-fluid rounded-circle mb-3 bg-image" style="height: 150px; width: 150px; object-fit: cover;">
     {% else %}
-      <img src="https://via.placeholder.com/150" alt="Driver Profile Picture" class="img-fluid rounded-circle mb-3 bg-image" style="height: 150px; width: 100px; object-fit: cover;">
+      <img src="https://via.placeholder.com/150" alt="Driver Profile Picture" class="img-fluid rounded-circle mb-3 bg-image" style="height: 150px; width: 150px; object-fit: cover;">
     {% endif %}
       <h3 class="mb-3">{{ driver.first_name }} {{ driver.last_name }}</h3>
       <!-- Driver essential information -->
@@ -36,7 +40,7 @@
         <div class="card-body">
           <h5 class="card-title">Current Location</h5>
           <p class="card-text">123 Main St, Anytown, USA</p>
-          <a href="#" class="btn btn-primary">Get Directions</a>
+          <a  href="https://www.google.com/maps/dir/?api=1&destination={{driver_location.latitude}},{{driver_location.longitude}}" target="_blank" class="btn btn-primary">Get Directions</a>
           <div id="map"></div>
         </div>
       </div>
@@ -55,8 +59,8 @@
       if (navigator.geolocation) {
           navigator.geolocation.getCurrentPosition(function (position) {
               var pos = {
-                  lat: {{driver.location_lat}},
-                  lng: {{driver.location_long}}
+                  lat: {{driver_location.latitude}},
+                  lng: {{driver_location.longitude}}
               };
 
               // Center the map on the user's location

@@ -10,5 +10,6 @@ urlpatterns = [
     path('login/', views.login, name='login'),
     path('drivers_list/', views.driver_list, name='drivers_list'),
     path('driver_detail/<int:pk>/', views.driver_detail, name='driver_detail'),
-    path('create_driver/', views.create_driver, name='create_driver')
+    path('create_driver/', views.create_driver, name='create_driver'),
+    path('driver_edit/<int:pk>', views.driver_edit, name="driver_edit")
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

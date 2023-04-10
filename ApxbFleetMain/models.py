@@ -1,5 +1,16 @@
 from django.db import models
-from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin
+
+
+class DriverLocation(models.Model):
+    driver = models.ForeignKey('Driver', on_delete=models.CASCADE)
+    latitude = models.DecimalField(
+        max_digits=9, decimal_places=6, default=0)
+    longitude = models.DecimalField(
+        max_digits=9, decimal_places=6, default=0)
+    timestamp = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        verbose_name_plural = "Driver Locations"
 
 
 class Driver(models.Model):
@@ -10,9 +21,5 @@ class Driver(models.Model):
     car_make = models.CharField(max_length=50)
     car_model = models.CharField(max_length=50)
     license_plate = models.CharField(max_length=20)
-    location_lat = models.DecimalField(
-        max_digits=9, decimal_places=6, default=0)
-    location_long = models.DecimalField(
-        max_digits=9, decimal_places=6, default=0)
     picture = models.ImageField(
         upload_to='driver_pictures/', blank=True, null=True)
