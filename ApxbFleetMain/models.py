@@ -23,3 +23,15 @@ class Driver(models.Model):
     license_plate = models.CharField(max_length=20)
     picture = models.ImageField(
         upload_to='driver_pictures/', blank=True, null=True)
+
+
+class DriverBehavior(models.Model):
+    behavior = models.CharField(max_length=255)
+
+
+class DriverInformation(models.Model):
+    driver = models.OneToOneField(Driver, on_delete=models.CASCADE)
+    years_of_experience = models.IntegerField(default=0)
+    driving_record = models.CharField(max_length=50, default='Clean')
+    training_courses_completed = models.CharField(max_length=255, default='')
+    languages_spoken = models.CharField(max_length=255, default='')

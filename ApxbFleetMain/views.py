@@ -1,8 +1,9 @@
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render
 from django.shortcuts import render, get_object_or_404, redirect
-from .models import Driver, DriverLocation
+from .models import Driver, DriverLocation, DriverBehavior
 from .forms import DriverForm
+from django.db.models import Count
 # Create your views here.
 from celery import Celery
 from celery.schedules import crontab
@@ -65,3 +66,15 @@ def driver_delete(request, pk):
     driver = get_object_or_404(Driver, pk=pk)
     driver.delete()
     return redirect('driver_list')
+
+
+def get_driver_behavior_data(request):
+    data = DriverBehavior.objects.values(
+        'behavior').annotate(count=Count('behavior'))
+    data_list = list(data)
+    print(len(data_list))
+    return JsonResponse({'data': list(data)})
+
+
+def live_feeds(request):
+    return render(request, 'ApxbFleetMain/pages/drivers/livefeeds.html')

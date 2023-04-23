@@ -1,0 +1,50 @@
+{% extends 'ApxbFleetMain/blankLayout.html' %}
+{% load static %}
+{% block content %}
+<h1>View Live Feeds</h1>
+<div class="container">
+
+<video id="videoElement" controls muted autoplay></video>
+</br>
+<button class="btn btn-primary" id="recordButton">View Live Feeds</button>
+<button class="btn btn-secondary" id="stopButton">Stop</button>
+</div>
+{% endblock %}
+{% block script %}
+<script>
+  let stream;
+
+  const constraints = {
+    video: true,
+    audio: false
+  };
+
+  const video = document.querySelector("#videoElement");
+
+  function handleSuccess(mediaStream) {
+    stream = mediaStream;
+    video.srcObject = stream;
+  }
+
+  function handleError(error) {
+    console.error('Error: ', error);
+  }
+
+  function stopStream() {
+    stream.getTracks().forEach(function(track) {
+      track.stop();
+    });
+  }
+
+  document.querySelector('#recordButton').addEventListener('click', () => {
+    video.
+    navigator.mediaDevices.getUserMedia(constraints)
+      .then(handleSuccess)
+      .catch(handleError);
+  });
+
+  document.querySelector('#stopButton').addEventListener('click', () => {
+    stopStream();
+  });
+</script>
+{% endblock %}
