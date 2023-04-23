@@ -24,6 +24,8 @@
         <li><strong>Email:</strong> {{ driver.email }}</li>
         <li><strong>Address:</strong> 123 Main St, Anytown, USA</li>
       </ul>
+
+      <a href="{% url 'ApxbFleetMain:live_feeds'%}" class="btn btn-primary">Live Feeds</a>
     </div>
     <div class="col-md-8">
       <!-- Driver additional information -->
@@ -44,6 +46,7 @@
           <div id="map"></div>
         </div>
       </div>
+      <canvas id="driver-behavior-chart"></canvas>
     </div>
 </div>
 {% endblock %}
@@ -76,5 +79,39 @@
       }
   }
 </script>
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDGpHozG4LVQn1pzqAbp3d8CtLPv0kqbas&callback=initMap"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1"></script>
+<script>
+  // Retrieve the data from the server
+  fetch('/get-driver-behavior-data/')
+  .then(response => response.json())
+  .then(data => {
+    const behaviorData = data.data;
+    const behaviorLabels = behaviorData.map(item => item.behavior);
+    const behaviorCounts = behaviorData.map(item => item.count);
+
+    const ctx = document.getElementById('driver-behavior-chart');
+    const myChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: behaviorLabels,
+        datasets: [{
+          label: '# of Occurrences',
+          data: behaviorCounts,
+          backgroundColor: 'rgba(54, 162, 235, 0.2)',
+          borderColor: 'rgba(54, 162, 235, 1)',
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+  });
+  </script>
+  
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap"></script>
 {% endblock %}
