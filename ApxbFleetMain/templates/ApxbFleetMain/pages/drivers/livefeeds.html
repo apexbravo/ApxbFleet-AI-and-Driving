@@ -36,11 +36,13 @@
     });
   }
 
-  document.querySelector('#recordButton').addEventListener('click', () => {
-    video.
-    navigator.mediaDevices.getUserMedia(constraints)
-      .then(handleSuccess)
-      .catch(handleError);
+  document.addEventListener('DOMContentLoaded', () => {
+    const recordButton = document.querySelector('#recordButton');
+    recordButton.addEventListener('click', () => {
+      navigator.mediaDevices.getUserMedia(constraints)
+        .then(handleSuccess)
+        .catch(handleError);
+    });
   });
 
   document.querySelector('#stopButton').addEventListener('click', () => {

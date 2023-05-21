@@ -11,7 +11,7 @@ class Command(BaseCommand):
 
     async def update_driver_location(self):
         # Set up the Life360 API client
-        authorization_token = "cFJFcXVnYWJSZXRyZTRFc3RldGhlcnVmcmVQdW1hbUV4dWNyRUh1YzptM2ZydXBSZXRSZXN3ZXJFQ2hBUHJFOTZxYWtFZHI0Vg=="
+        authorization_token = "cFJFcXVnYWJSZXRyZTRFc3RldGhlW1hbUV4dWNyRUh1YzptM2ZydXBSZXRSZXN3ZXJFQ2hBUHJFOTZxYWtFZHI0Vg=="
         username = "abelrevelation@gmail.com"
         password = "Blah123"
         api = life360(authorization_token=authorization_token,

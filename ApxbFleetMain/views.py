@@ -7,6 +7,9 @@ from django.db.models import Count
 # Create your views here.
 from celery import Celery
 from celery.schedules import crontab
+from django.utils.translation import gettext as _
+
+from django.utils.translation import gettext
 
 app = Celery('ApxbFleetMain', broker='redis://localhost:6379/0')
 
@@ -78,3 +81,7 @@ def get_driver_behavior_data(request):
 
 def live_feeds(request):
     return render(request, 'ApxbFleetMain/pages/drivers/livefeeds.html')
+
+
+def my_view(request):
+    translated_string = _('Hello, world!')
