@@ -30,8 +30,8 @@ ALLOWED_HOSTS = []
 
 LANGUAGES = [
     ('en', 'English'),
-    ('zu', 'Zulu'),
-    ('sn', 'Shona'),
+    ('fr', 'Zulu'),
+    ('es', 'Shona'),
 ]
 
 
@@ -86,6 +86,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'ApxbFleetMain.context_processors.language_info',
+                'ApxbFleetMain.context_processors.language_info_list',
             ],
         },
     },
@@ -93,6 +95,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'ApxbFleet.wsgi.application'
 
+LANGUAGE_COOKIE_NAME = 'django_language'
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
@@ -145,6 +148,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = 'static/'
+
 
 LOCALE_PATHS = (BASE_DIR + 'locale/', )
 

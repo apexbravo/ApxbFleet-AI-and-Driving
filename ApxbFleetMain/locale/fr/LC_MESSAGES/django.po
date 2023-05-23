@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-21 23:39+0200\n"
+"POT-Creation-Date: 2023-05-23 01:49+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,112 +16,120 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: .\ApxbFleetMain\templates\ApxbFleetMain\index.html:9
+
+#: .\ApxbFleetMain\templates\ApxbFleetMain\index.html:10
 msgid "NonIntrusive"
-msgstr "Non-Intrusive"
+msgstr "Ayikuphazamisi"
 
-#: .\ApxbFleetMain\templates\ApxbFleetMain\index.html:10
+#: .\ApxbFleetMain\templates\ApxbFleetMain\index.html:11
 msgid "ImproveRoadSafety"
-msgstr " Improve Road Safety"
+msgstr "Thuthukisa ukuphepha emgwaqeni"
 
-#: .\ApxbFleetMain\templates\ApxbFleetMain\index.html:10
+#: .\ApxbFleetMain\templates\ApxbFleetMain\index.html:11
+msgid "And"
+msgstr " noku-"
+
+#: .\ApxbFleetMain\templates\ApxbFleetMain\index.html:11
 msgid "PreventAccidents"
-msgstr " Prevent Accidents"
+msgstr " Vimbela Izingozi"
 
-#: .\ApxbFleetMain\templates\ApxbFleetMain\index.html:10
+#: .\ApxbFleetMain\templates\ApxbFleetMain\index.html:11
+msgid "With"
+msgstr " Ne-"
+
+#: .\ApxbFleetMain\templates\ApxbFleetMain\index.html:11
 msgid "AdvancedDriverMonitoringTechnology"
-msgstr " Advanced Driver Monitoring Technology"
+msgstr "I-Advanced Driver Monitoring Technology"
 
 #: .\ApxbFleetMain\templates\ApxbFleetMain\pages\drivers\add.html:7
 msgid "CreateNewDriver"
-msgstr " Create New Driver"
+msgstr "Yenza umshayeli omusha"
 
 #: .\ApxbFleetMain\templates\ApxbFleetMain\pages\drivers\add.html:18
 msgid "Save"
-msgstr " Save"
+msgstr "Faka"
 
 #: .\ApxbFleetMain\templates\ApxbFleetMain\pages\drivers\details.html:8
 msgid "EditDriver"
-msgstr " Edit Driver"
+msgstr "Hlela lo Mshayeli"
 
 #: .\ApxbFleetMain\templates\ApxbFleetMain\pages\drivers\details.html:21
 msgid "DriverId"
-msgstr " Driver Id"
+msgstr "i-Id yakhe"
 
 #: .\ApxbFleetMain\templates\ApxbFleetMain\pages\drivers\details.html:22
 msgid "LicenseNumber"
-msgstr " License Number"
+msgstr "Inombolo Yelayisensi"
 
 #: .\ApxbFleetMain\templates\ApxbFleetMain\pages\drivers\details.html:23
 msgid "PhoneNumber"
-msgstr "  Phone Number"
+msgstr "Inombolo yocingo"
 
 #: .\ApxbFleetMain\templates\ApxbFleetMain\pages\drivers\details.html:24
 msgid "Email"
-msgstr " Email"
+msgstr "i-Email yake"
 
 #: .\ApxbFleetMain\templates\ApxbFleetMain\pages\drivers\details.html:25
 msgid "Address"
-msgstr " Address"
+msgstr "Ikheli"
 
 #: .\ApxbFleetMain\templates\ApxbFleetMain\pages\drivers\details.html:28
 msgid "LiveFeeds"
-msgstr " Live Feeds"
+msgstr "Ividiyo ebukhoma"
 
 #: .\ApxbFleetMain\templates\ApxbFleetMain\pages\drivers\details.html:32
 msgid "AdditionalInformation"
-msgstr " Additional Information"
+msgstr "Ulwazi Olwengeziwe"
 
 #: .\ApxbFleetMain\templates\ApxbFleetMain\pages\drivers\details.html:34
 msgid "YearsOfExperience"
-msgstr " Years Of Experience"
+msgstr "Iminyaka Yesipiliyoni"
 
 #: .\ApxbFleetMain\templates\ApxbFleetMain\pages\drivers\details.html:35
 msgid "DrivingRecord"
-msgstr "  Driving Record"
+msgstr "i-Driver Record"
 
 #: .\ApxbFleetMain\templates\ApxbFleetMain\pages\drivers\details.html:35
 msgid "Clean"
-msgstr " Clean"
+msgstr ""
 
 #: .\ApxbFleetMain\templates\ApxbFleetMain\pages\drivers\details.html:36
 msgid "TrainingCoursesCompleted"
-msgstr " Training Courses Completed"
+msgstr "Akapedza Zvidzidzo zvipi"
 
 #: .\ApxbFleetMain\templates\ApxbFleetMain\pages\drivers\details.html:36
 msgid "DefensiveDriving"
-msgstr " Defensive Driving"
+msgstr ""
 
 #: .\ApxbFleetMain\templates\ApxbFleetMain\pages\drivers\details.html:36
 msgid "SafetyTraining"
-msgstr " Safety Training"
+msgstr ""
 
 #: .\ApxbFleetMain\templates\ApxbFleetMain\pages\drivers\details.html:37
 msgid "LanguagesSpoken"
-msgstr " Languages Spoken"
+msgstr "Izilimi akwazi ukuzikhuluma"
 
 #: .\ApxbFleetMain\templates\ApxbFleetMain\pages\drivers\details.html:37
 msgid "English"
-msgstr " English"
+msgstr ""
 
 #: .\ApxbFleetMain\templates\ApxbFleetMain\pages\drivers\details.html:37
 msgid "Spanish"
-msgstr " Spanish"
+msgstr ""
 
 #: .\ApxbFleetMain\templates\ApxbFleetMain\pages\drivers\details.html:40
 msgid "LocationInformation"
-msgstr " Location Information"
+msgstr "Zvimbo Dzaari"
 
 #: .\ApxbFleetMain\templates\ApxbFleetMain\pages\drivers\details.html:43
 msgid "CurrentLocation"
-msgstr " Current Location"
+msgstr "Ukuphi manje"
 
 #: .\ApxbFleetMain\templates\ApxbFleetMain\pages\drivers\details.html:45
 msgid "GetDirections"
-msgstr " Get Directions"
+msgstr "Ukuphi manje"
 
 #: .\ApxbFleetMain\views.py:87
 msgid "Hello, world!"
-msgstr "Hello, world!"
+msgstr ""

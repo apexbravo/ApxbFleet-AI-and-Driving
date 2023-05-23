@@ -1,3 +1,4 @@
+{% load i18n %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -21,26 +22,53 @@
     
     <title>{% block title %} My Website {% endblock %}</title>
   </head>
-  <body  id="page-top" data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="77">
+  <body id="page-top" data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="77">
     <nav class="navbar navbar-light navbar-expand-md fixed-top" id="mainNav">
-      <div class="container"><a class="navbar-brand" href="#">APXb Fleet</a><button data-bs-toggle="collapse" class="navbar-toggler navbar-toggler-right" data-bs-target="#navbarResponsive" type="button" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" value="Menu"><i class="fa fa-bars"></i></button>
-          <div class="collapse navbar-collapse" id="navbarResponsive">
-              <ul class="navbar-nav ms-auto">
-                  <li class="nav-item nav-link"><a class="nav-link active" href="{% url 'ApxbFleetMain:drivers_list' %}">Drivers</a></li>
+      <!-- Navbar content omitted for brevity -->
+
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ms-auto">
+          <!-- Navbar links omitted for brevity -->
+          <li class="nav-item nav-link"><a class="nav-link active" href="{% url 'ApxbFleetMain:drivers_list' %}">Drivers</a></li>
                   <li class="nav-item nav-link"><a class="nav-link" href="{% url 'ApxbFleetMain:login'%}">Login</a></li>
                   <li class="nav-item nav-link"></li>
-              </ul>
-          </div>
+          <li class="nav-item nav-link">
+            <form action="{% url 'set_language'%}" method="post">
+              {% csrf_token %}
+              <div class="dropdown">
+                <button class="nav-link dropdown-toggle" type="button" id="languageDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="
+                background-color: transparent;
+                border: none;
+            ">
+                  {% get_language_info for request.LANGUAGE_CODE as current_language_info %}
+                  <img src="{% static 'flags/' %}{{ request.LANGUAGE_CODE }}.png" alt="{{ request.LANGUAGE_CODE }}" style="height:16px">
+                </button>
+                <div class="dropdown-menu bg-secondary" aria-labelledby="languageDropdown">
+                  {% for language in languages %}
+                    {% if language.code != request.LANGUAGE_CODE %}
+                      <button class="dropdown-item" type="submit" name="language" value="{{ language.code }}">
+                        <img src="{% static 'flags/' %}{{ language.code }}.png" alt="{{ language.code }}" style="height:16px">
+                        {{ language.name }}
+                      </button>
+                    {% endif %}
+                  {% endfor %}
+                </div>
+              </div>
+            </form>
+            
+          </li>
+        </ul>
       </div>
-  </nav>
-
-
-    {% block content %} {% endblock %}
+    </nav>
+    
+    {% block content %}{% endblock %}
+    
     <footer>
       <div class="container text-center">
-          <p>Apxb08© 2023</p>
+        <p>Apxb08 © 2023</p>
       </div>
-  </footer>
+    </footer>
+    <script src="https://unpkg.com/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
 
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
     <script src="{% static 'js/greyscale.js' %}"></script>

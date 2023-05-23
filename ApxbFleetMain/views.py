@@ -1,6 +1,10 @@
+from django.conf import settings
 from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render
 from django.shortcuts import render, get_object_or_404, redirect
+from django.urls import reverse
+
+from ApxbFleetMain.context_processors import language_info_list
 from .models import Driver, DriverLocation, DriverBehavior
 from .forms import DriverForm
 from django.db.models import Count
@@ -8,7 +12,9 @@ from django.db.models import Count
 from celery import Celery
 from celery.schedules import crontab
 from django.utils.translation import gettext as _
-
+from django.shortcuts import redirect
+from django.utils.translation import activate
+from django.utils.translation import get_language_info
 from django.utils.translation import gettext
 
 app = Celery('ApxbFleetMain', broker='redis://localhost:6379/0')
@@ -22,7 +28,8 @@ app.conf.beat_schedule = {
 
 
 def index(request) -> HttpResponse:
-    return render(request, 'ApxbFleetMain/index.html')
+    languages = language_info_list(request)
+    return render(request, 'ApxbFleetMain/index.html', {'languages': languages})
 
 
 def login(request) -> HttpResponse:
@@ -81,7 +88,3 @@ def get_driver_behavior_data(request):
 
 def live_feeds(request):
     return render(request, 'ApxbFleetMain/pages/drivers/livefeeds.html')
-
-
-def my_view(request):
-    translated_string = _('Hello, world!')

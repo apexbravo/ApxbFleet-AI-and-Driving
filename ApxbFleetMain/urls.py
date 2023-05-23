@@ -15,5 +15,6 @@ urlpatterns = [
     path('driver_edit/<int:pk>', views.driver_edit, name="driver_edit"),
     path('get-driver-behavior-data/', get_driver_behavior_data,
          name='get_driver_behavior_data'),
-    path('live_feeds/', views.live_feeds, name='live_feeds')
+    path('live_feeds/', views.live_feeds, name='live_feeds'),
+
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

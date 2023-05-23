@@ -5,8 +5,8 @@
 
 <div class="container mt-4">
   <div class="btn-toolbar float-end d-inline pb-3">
-    <a class="btn btn-sm btn-outline-secondary " href="{% url 'ApxbFleetMain:driver_edit' driver.id %}" ><i class="fa fa-penci"></i> Edit Driver</a>
-</div>
+    <a class="btn btn-sm btn-outline-secondary " href="{% url 'ApxbFleetMain:driver_edit' driver.id %}" ><i class="fa fa-penci"></i> {% trans 'EditDriver' %}</a>
+  </div>
   <div class="row">
     <div class="col-md-4">
       <!-- Driver profile picture -->
@@ -18,36 +18,37 @@
       <h3 class="mb-3">{{ driver.first_name }} {{ driver.last_name }}</h3>
       <!-- Driver essential information -->
       <ul class="list-unstyled">
-        <li><strong>Driver ID:</strong> 12345</li>
-        <li><strong>License Number:</strong> {{ driver.license_plate }}</li>
-        <li><strong>Phone Number:</strong> {{ driver.phone_number }}</li>
-        <li><strong>Email:</strong> {{ driver.email }}</li>
-        <li><strong>Address:</strong> 123 Main St, Anytown, USA</li>
+        <li><strong>{% trans 'DriverId' %}:</strong> 12345</li>
+        <li><strong>{% trans 'LicenseNumber' %}:</strong> {{ driver.license_plate }}</li>
+        <li><strong>{% trans 'PhoneNumber' %}:</strong> {{ driver.phone_number }}</li>
+        <li><strong>{% trans 'Email' %}:</strong> {{ driver.email }}</li>
+        <li><strong>{% trans 'Address' %}:</strong> 123 Main St, Anytown, USA</li>
       </ul>
 
-      <a href="{% url 'ApxbFleetMain:live_feeds'%}" class="btn btn-primary">Live Feeds</a>
+      <a href="{% url 'ApxbFleetMain:live_feeds'%}" class="btn btn-primary">{% trans 'LiveFeeds' %}</a>
     </div>
     <div class="col-md-8">
       <!-- Driver additional information -->
-      <h4 class="mb-3">Additional Information</h4>
+      <h4 class="mb-3">{% trans 'AdditionalInformation' %}</h4>
       <ul class="list-group mb-3">
-        <li class="list-group-item">Years of Experience: 10</li>
-        <li class="list-group-item">Driving Record: Clean</li>
-        <li class="list-group-item">Training Courses Completed: Defensive Driving, Safety Training</li>
-        <li class="list-group-item">Languages Spoken: English, Spanish</li>
+        <li class="list-group-item">{% trans 'YearsOfExperience' %}: 10</li>
+        <li class="list-group-item">{% trans 'DrivingRecord' %}: Clean</li>
+        <li class="list-group-item">{% trans 'TrainingCoursesCompleted' %}: DefensiveDriving, SafetyTraining </li>
+        <li class="list-group-item">{% trans 'LanguagesSpoken' %}: English, Spanish</li>
       </ul>
       <!-- Driver location information -->
-      <h4 class="mb-3">Location Information</h4>
+      <h4 class="mb-3">{% trans 'LocationInformation' %}</h4>
       <div class="card">
         <div class="card-body">
-          <h5 class="card-title">Current Location</h5>
+          <h5 class="card-title">{% trans 'CurrentLocation' %}</h5>
           <p class="card-text">123 Main St, Anytown, USA</p>
-          <a  href="https://www.google.com/maps/dir/?api=1&destination={{driver_location.latitude}},{{driver_location.longitude}}" target="_blank" class="btn btn-primary">Get Directions</a>
+          <a href="https://www.google.com/maps/dir/?api=1&destination={{driver_location.latitude}},{{driver_location.longitude}}" target="_blank" class="btn btn-primary">{% trans 'GetDirections' %}</a>
           <div id="map"></div>
         </div>
       </div>
       <canvas id="driver-behavior-chart"></canvas>
     </div>
+  </div>
 </div>
 {% endblock %}
 {% block script %}
